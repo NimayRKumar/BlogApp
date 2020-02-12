@@ -36,7 +36,7 @@
 
   <body>
 
- 
+ <img src="img/blog.jpg" height="50" width="50">
 
 <%
 
