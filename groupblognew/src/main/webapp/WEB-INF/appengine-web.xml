@@ -4,17 +4,13 @@
   <threadsafe>true</threadsafe>
   <sessions-enabled>false</sessions-enabled>
   <runtime>java8</runtime>
-   <static-files>
-  <include path="/stylesheets/image/landscape.jpg"></include>
-  <include path="/stylesheets/main.css"></include>
-  
-  </static-files>
 
   <system-properties>
     <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
   </system-properties>
   
-
-
+  <inbound-services>
+  	<service>mail</service>
+  </inbound-services>
 
 </appengine-web-app>
