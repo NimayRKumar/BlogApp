@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ page import="java.util.List" %>
@@ -45,16 +44,16 @@
 	<%
     UserService userService = UserServiceFactory.getUserService();
     User user = userService.getCurrentUser();
-
     if (user != null) {
     
       pageContext.setAttribute("user", user);
 	%>
 	<a href="createblog.jsp">Create Post</a>
+	<a href="subscribe.jsp"> Subscribe</a>
 	<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">Sign out</a>
 	<%
-    	} else {
-
+    	} 
+    else {
 	%>
 
 	<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
@@ -70,37 +69,30 @@
 <ul>
 
 <%
-
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-
     Key blogKey = KeyFactory.createKey("blog", "total");
-
     // Run an ancestor query to ensure we see the most up-to-date
-
     // view of the Greetings belonging to the selected Guestbook.
-
     Query query = new Query("blog", blogKey).addSort("date", Query.SortDirection.DESCENDING);
 
+    
     List<Entity> blog = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(5));
 
     if (blog.isEmpty()) {
-
         %>
 
         <p>no new blogs</p>
 
         <%
-
     } else {
-
         %>
 
         
 
         <%
-
         for (Entity b : blog) {
         	
+        	//pageContext.setAttribute("subscriber", s.getProperty("email"));
             pageContext.setAttribute("author",b.getProperty("author"));
             pageContext.setAttribute("title",b.getProperty("title"));
             pageContext.setAttribute("content",b.getProperty("content"));
@@ -109,18 +101,16 @@
           %>   
          <li>
          <hr>
-         <ul>
+         <ul>         	
             <li>Author: ${fn:escapeXml(author)}</li>
             <li>Time: ${fn:escapeXml(date)}</li>
             <li>Title: ${fn:escapeXml(title)}</li>
-            <li>Content: ${fn:escapeXml(content)}</li>
+            <li>Content: ${fn:escapeXml(content)}</li> 
         </ul>
          </li>
             <%  
-
             }
     }
-
             %>
 
       
