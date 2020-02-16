@@ -1,0 +1,75 @@
+.header {
+	margin:0;
+	background-color:transparent;
+    overflow: hidden;
+}
+.blogname {
+	margin-top:5%;
+	margin-left:5%;
+}
+.blogname span{
+	font-size:50px;
+	color:black;
+	text-align: center;
+	padding:0;
+	font-style:bold;
+}
+.login{
+	float:right;
+	margin-top:-14%;
+}
+.header a {
+  float: right;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+   
+}
+
+/* Change the color of links on hover */
+.header a:hover {
+  color: black;
+  font-size:23px;
+  
+}
+hr {
+	width:70%;
+    margin-top:2%;
+	margin-left:0;
+	margin-bottom:3%;
+	border:0.5px solid black;
+	size: 0.8pt;
+	
+}
+
+/* Add a color to the active/current link */
+
+
+body {
+ background-image: url("image/landscape.jpg");
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+
+}
+.newpost{
+	margin-left : 5%;
+}
+.newpost input,textarea{
+	margin-bottom: 2%;
+}
+
+
+ul{
+   list-style-type:none;
+}
+ul hr{	
+	width:70%;
+    margin-top:5%;
+	margin-left:5%;
+	margin-bottom:2%;
+	border:0.5px solid gray;
+	size: 0.8pt;	
+}
