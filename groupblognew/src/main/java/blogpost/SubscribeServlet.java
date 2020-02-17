@@ -23,9 +23,9 @@ public class SubscribeServlet extends HttpServlet{
 	
 		String email = req.getParameter("email");
 		
-	    //Key subscriberKey = KeyFactory.createKey("subscriber", email);
+	    Key subscriberKey = KeyFactory.createKey("subscriber", "total");
 
-		Entity subscriber = new Entity("subscriber", email);
+		Entity subscriber = new Entity("subscriber", subscriberKey);
 		
 		subscriber.setProperty("email", email);
 		
