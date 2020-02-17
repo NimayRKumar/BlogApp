@@ -9,6 +9,19 @@
     <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
   </system-properties>
   
+  
+   
+   <static-files>
+  <include path="/stylesheets/image/landscape.jpg"></include>
+   <include path="/stylesheets/image/1.jpg"></include>
+     <include path="/stylesheets/image/3.jpg"></include>
+      <include path="/stylesheets/image/4.jpg"></include>
+       <include path="/stylesheets/image/5.jpg"></include>
+  <include path="/stylesheets/main.css"></include>
+  
+  </static-files>
+  
+  
   <inbound-services>
   	<service>mail</service>
   </inbound-services>

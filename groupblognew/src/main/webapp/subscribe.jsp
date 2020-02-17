@@ -17,11 +17,19 @@
 	<head>
 
 		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+		<script> 
+  function changeTheme() {
+	    var e = document.getElementById("background");
+	    var theme = e.options[e.selectedIndex].value;
+	    document.getElementById("shelf").style.backgroundImage = "url(" + theme + ")";
+	}  
+  </script>
+		
 	
 	</head>
 	
 	
-  <body>
+  <body id = "shelf">
   
   
 	<div class = "header">
@@ -29,6 +37,22 @@
 		<div class = "blogname">
 		
 	     	<span>Art Blog</span>
+	     	 <div style="float:right;">
+     Background
+     <select id="background" name="background" onChange="changeTheme()">
+     
+  <option value="stylesheets/image/landscape.jpg">landscape</option>
+  <option value="stylesheets/image/1.jpg">image1</option>
+  <option value="stylesheets/image/3.jpg">image2</option>
+  <option value="stylesheets/image/4.jpg">image3</option>
+  <option value="stylesheets/image/5.jpg">image4</option>
+  
+      </select>
+      </div>
+	     	
+	     	
+	     	
+	     	
 	     	<hr noshade>
 	     	
 		     <div class = "description">
