@@ -125,6 +125,24 @@ catch (Exception ex) {
 public void doPost(HttpServletRequest req, HttpServletResponse resp)
 throws ServletException, IOException {
 doGet(req, resp);
+
+
+static long msPerDay = 60 * 60 * 24 * 1000;
+
+public boolean withinDay(Entity b) {
+	
+	Date then = (Date) b.getProperty("date");
+	Date now = new Date();
+	
+	if(now.getTime() - then.getTime() <= msPerDay) {
+		return true;
+	}
+	
+	return false;
+}
+
+
+
 }
 
 
@@ -145,3 +163,4 @@ public boolean withinDay(Entity b) {
 
 
 }
+
